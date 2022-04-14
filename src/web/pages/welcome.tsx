@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Welcome = (props: {message: string}) => {
+const Welcome = (props: { message: string }) => {
   return (
-    <div className='container'>
+    <div className="container">
       <p>{props?.message}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Welcome
+export default Welcome;

@@ -7,18 +7,28 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   extends: [
-    "standard",
+    "airbnb-base",
+    "airbnb-typescript/base",
     "plugin:prettier/recommended",
-    "plugin:node/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
+    project: ["./tsconfig.json"],
     ecmaVersion: 12,
   },
   rules: {
-    "node/no-unsupported-features/es-syntax": [
-      "error",
-      { ignores: ["modules"] },
-    ],
+    "import/extensions": [ 
+      "warn",
+      "ignorePackages",
+      { 
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "d.ts": "never",
+        "json": "always",
+        "": "never",
+      } ]
   },
 };

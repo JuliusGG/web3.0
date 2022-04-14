@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "es2018",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "es2018"
+      "es2018",
+      "DOM",
+      "DOM.Iterable",
     ],
     "module": "commonjs",
     "strict": true,
