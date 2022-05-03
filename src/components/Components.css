@@ -1,0 +1,14 @@
+.Address {
+  font-size: calc(4px + 1vmin);
+}
+
+.Install-wallet {
+  font-size: calc(4px + 2vmin);
+}
+
+.Metamask {
+  color: orange;
+}
+.Metamask:visited {
+  color: orange;
+}

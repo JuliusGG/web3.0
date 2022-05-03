@@ -3,7 +3,7 @@ import React from "react";
 const Welcome = (props: { message: string }) => {
   return (
     <div className="container">
-      <p>{props?.message}</p>
+      <h1>{props?.message}</h1>
     </div>
   );
 };

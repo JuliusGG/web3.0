@@ -1,12 +1,35 @@
+# To start on localhost
+npm run start
+
+# To build
+npm run build
+
 # To run the web3 
 Hardhat is used for the web3 integration.
 First you need a .env file at the root, you will need these three secret variables: POLYGON_API_URL, PRIVATE_KEY, POLYGON_WEB_SOCKET
 You can set up your own account at https://dashboard.alchemyapi.io and try it out, you will also need an online wallet(the PRIVATE_KEY) that can connect to the mumbai polygon test chain https://docs.polygon.technology/docs/develop/alchemy/
 
-To play with the data on the mumbai chain that you have, you'll need to do npx hardhat compile, then npx hardhat node.
+To play with the data on the mumbai chain that you have, first compile the hardhat and then run the localhost node.
+```shell
+npx hardhat compile
+npx hardhat node
+```
+
+
 There you have your own web3 api running. From there in another shell you can type 
 npx hardhat accounts to see the list of addresses connected to your test chain.
-npx hardhat balance <PARAMETER - a wallet address 0x...> then the task will get information on the chain and print out the etherum balance on that address.
+npx hardhat balance --account <PARAMETER - a wallet address 0x...>
+then the task will get information on the chain and print out the etherum balance on that address.
+
+Some commands will require the flag "--network localhost".
+For example, npx hardhat accounts will print out your wallet address.
+However, npx hardhat accounts --network localhost will print out all wallet addresses on the chain - coming from the hardhat node mentioned previously.
+
+# Creating contracts
+After creating a contract you need to:
+npx hardhat compile
+add your contract into scripts/deploy.ts and then run
+npx hardhat run --network localhost scripts/deploy.ts
 
 # Advanced Sample Hardhat Project
 
@@ -54,3 +77,6 @@ npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
 # Performance optimizations
 
 For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).
+
+# TO-DO
+Seperate tasks from hardhat config.

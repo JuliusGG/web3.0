@@ -20,11 +20,16 @@ async function main() {
   const HelloWorld = await ethers.getContractFactory("HelloWorld");
   const helloWorld = await HelloWorld.deploy("Hello, big wide world!");
 
+  const GetAccounts = await ethers.getContractFactory("GetAccounts");
+  const getAccounts = await GetAccounts.deploy(["0x1234567890", "0x0987654321"]);
+
   await greeter.deployed();
   await helloWorld.deployed();
+  await getAccounts.deployed();
 
   console.log("Greeter deployed to:", greeter.address);
   console.log("HelloWorld contract deployed to address: ", helloWorld.address);
+  console.log('get accounts contract was deployed to address: ', getAccounts.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
