@@ -1,3 +1,9 @@
+# WHAT IS THIS
+I'm just playing around and understanding the mechanism behind blockchain technology and web3.0 integrations.
+You don't need to use hardhat and polygon chain if you just want to try the wallet integration, only metamask is needed for that.
+
+No work has been into mobile friendliness.
+
 # To start on localhost
 npm run start
 
