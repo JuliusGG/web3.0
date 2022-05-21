@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: lightgray;
+  height: 100vh;
 }
 
 .App-logo {
@@ -14,9 +16,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 1vh;
-  max-height: 15vh;
+  max-height: 9vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,6 +34,28 @@
   color: #61dafb;
 }
 
+.Eth-balance {
+  width: calc(30px + 6vw);
+  margin-top: 0.5vh;
+  margin-left: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Eth-wallet {
+  flex-grow: inherit;
+  display: flex;
+  margin: 0.5vh 0.5vw 0 0;
+}
+
+.Nav {
+  padding: 6px 6px 6px 6px;
+  height: 66px;
+  background-color: darkcyan;
+  border-radius: 100px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -40,4 +63,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  margin: 0;
 }

@@ -8,8 +8,9 @@ import WalletDetection from "./components/WalletDectection";
 
 function App() {
   const [userWallet, setUserWallet] = useState<Wallet>({
-    address: "Please login to your wallet.",
+    address: "Please login to your wallet",
     balance: "0",
+    isConnected: false,
   });
 
   useEffect(() => {
@@ -19,10 +20,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p className="Flex-stretch">{userWallet.balance} eth</p>
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="Flex-stretch">
-          <WalletAddress address={userWallet.address} />
+        <div className={`Nav Eth-balance`}>
+          <p className="">{userWallet.balance} eth</p>
+        </div>
+        <div className={`Nav Eth-wallet`}>
+          <WalletAddress
+            address={userWallet.address}
+            isConnected={userWallet.isConnected}
+          />
         </div>
       </header>
       <Welcome message="oh hi mark" />

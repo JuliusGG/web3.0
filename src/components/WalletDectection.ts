@@ -23,13 +23,17 @@ function WalletDetection(
     const address = await signer.getAddress();
     const signerBalance = await signer.getBalance();
     const balance = ethers.utils.formatEther(signerBalance);
-    setUserWallet({ address, balance });
+    setUserWallet({ address, balance, isConnected: true });
   }
 
   try {
     signMetamaskConnection();
   } catch (e) {
-    setUserWallet({ address: "Error connecting the wallet.", balance: "0" });
+    setUserWallet({
+      address: "Error connecting the wallet.",
+      balance: "0",
+      isConnected: false,
+    });
   }
 }
 

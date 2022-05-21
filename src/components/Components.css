@@ -2,8 +2,16 @@
   font-size: calc(4px + 1vmin);
 }
 
-.Install-wallet {
+.Wallet {
+  margin: 0.5vh 0.5vw 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: calc(4px + 2vmin);
+}
+
+.Install-wallet {
+  width: 350px;
 }
 
 .Metamask {
@@ -11,4 +19,8 @@
 }
 .Metamask:visited {
   color: orange;
+}
+
+p {
+  margin: 0;
 }

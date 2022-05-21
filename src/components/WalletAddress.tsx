@@ -7,13 +7,14 @@ declare const window: Window &
     ethereum: ethers.providers.ExternalProvider;
   };
 
-function WalletAddress(props: { address: string }) {
+function WalletAddress(props: { address: string; isConnected: boolean }) {
   // Check if user has Metamask or other Ethereum wallet installed in browser.
-  if (window.ethereum === undefined) {
+  const isWalletInstalled = window.ethereum;
+  if (!isWalletInstalled) {
     return (
-      <>
+      <div className="Wallet">
         <p className="Install-wallet">
-          No Ethereum wallet detected - Please install{" "}
+          No Ethereum wallet detected Please install{" "}
           <a
             href="http://metamask.io"
             target="_blank"
@@ -24,11 +25,15 @@ function WalletAddress(props: { address: string }) {
             Metamask
           </a>
         </p>
-      </>
+      </div>
     );
   }
 
-  return <div className="Address">{props.address}</div>;
+  return (
+    <div className="Wallet">
+      <p className={props.isConnected ? "Address" : ""}>{props.address}</p>
+    </div>
+  );
 }
 
 export default WalletAddress;
